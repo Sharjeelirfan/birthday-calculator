@@ -9,7 +9,8 @@ function calnextBirthday() {
     days.innerHTML = "Please enter a valid date";
     hours.innerHTML = "";
     minutes.innerHTML = "";
-    return; 
+    return;
+  }
   
   let today = new Date();
   let birthdate = new Date(date.value);
