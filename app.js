@@ -4,6 +4,13 @@ let hours = document.getElementById("hours");
 let minutes = document.getElementById("mins");
 
 function calnextBirthday() {
+  
+  if (date.value === "") {
+    days.innerHTML = "Please enter a valid date";
+    hours.innerHTML = "";
+    minutes.innerHTML = "";
+    return; 
+  
   let today = new Date();
   let birthdate = new Date(date.value);
   let nextbirthday;
@@ -28,10 +35,11 @@ function calnextBirthday() {
 
   let difference = nextbirthday.getTime() - today.getTime();
   let leftDays = Math.ceil(difference / (1000 * 3600 * 24));
-    let leftHours = Math.ceil(difference / (1000 * 3600));
-    let leftmins = Math.ceil(difference / (1000 * 60));
+  let leftHours = Math.ceil(difference / (1000 * 3600));
+  let leftmins = Math.ceil(difference / (1000 * 60));
 
   // console.log(leftDays);
+
   days.innerHTML = "Your next birthday is in " + leftDays + " days";
   hours.innerHTML = "And in " + leftHours + " hours";
   minutes.innerHTML = "And in " + leftmins + " minutes";
